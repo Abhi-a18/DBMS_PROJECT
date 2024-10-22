@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Header with Navbar and Profile Image -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFEB3B"
+        android:orientation="horizontal">
+
+        <!-- Navbar Icon (Opens Drawer) -->
+        <ImageView
+            android:id="@+id/homenavbar"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Spacer to push Profile Image to the right -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Profile Image Icon -->
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:padding="5dp"
+            android:src="@drawable/profile"
+            app:tint="#BA170404"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Container for the Fragments -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation" />
+
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFEB3B"
+        app:menu="@menu/bottom_navbar"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black" />
+</RelativeLayout>
